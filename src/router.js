@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import CertificateList from './views/CertificateList.vue'
 import CertificateShow from './views/CertificateShow.vue'
 import CertificateCreate from './views/CertificateCreate.vue'
+import User from './views/User.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,12 @@ export default new Router({
       path: '/certificate/create',
       name: 'certificate-create',
       component: CertificateCreate
+    },
+    {
+      path: '/user/:username',
+      name: 'user',
+      component: User,
+      props: true
     }
   ]
 })

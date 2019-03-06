@@ -3,6 +3,7 @@
     <div id="nav">
       <router-link :to="{ name: 'certificate-list' }">Certificates</router-link>|
       <router-link :to="{ name: 'certificate-create' }">Create Certificate</router-link>|
+      <router-link :to="{ name: 'user', params: { username: 'Neneca' } }">User page</router-link>
     </div>
     <router-view/>
   </div>
