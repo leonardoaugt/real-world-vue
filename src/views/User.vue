@@ -1,7 +1,8 @@
 <template>
-  <h1>This is
+  <h2>
+    This is
     <i>{{ username }}</i>'s page
-  </h1>
+  </h2>
 </template>
 
 <script>
