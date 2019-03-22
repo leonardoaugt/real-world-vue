@@ -2,7 +2,6 @@
   <div>
     <h1>Certificates Listing</h1>
     <CertificateCard/>
-    <BaseIcon/>
   </div>
 </template>
 
