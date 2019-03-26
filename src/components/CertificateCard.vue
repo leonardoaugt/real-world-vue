@@ -1,11 +1,10 @@
 <template>
   <router-link class="event-link" :to="{ name: 'certificate-show', params: { id: 1 } }">
-    Show Certificate #1
     <div class="event-card -shadow">
-      <span class="eyebrow">@{{ event.time }} on {{ event.date }}</span>
-      <h4 class="title">{{ event.title }}</h4>
+      <span class="eyebrow">@{{ certificate.time }} on {{ certificate.date }}</span>
+      <h4 class="title">{{ certificate.title }}</h4>
       <BaseIcon name="users">
-        <span slot="description">{{ event.attendees.length }} attending</span>
+        <span slot="description">{{ certificate.attendees.length }} attending</span>
       </BaseIcon>
     </div>
   </router-link>
@@ -13,19 +12,8 @@
 
 <script>
 export default {
-  data() {
-    return {
-      event: {
-        id: 1,
-        title: 'OS-874921',
-        date: '22 Março 2019',
-        time: '6:00',
-        attendees: [
-          { id: 'abc123', name: 'Adalberto Jeripoca' },
-          { id: 'def456', name: 'Rodrigo Farofa' }
-        ]
-      }
-    }
+  props: {
+    certificate: Object
   }
 }
 </script>
