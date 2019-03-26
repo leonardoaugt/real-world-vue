@@ -1,5 +1,8 @@
 <template>
-  <router-link class="event-link" :to="{ name: 'certificate-show', params: { id: 1 } }">
+  <router-link
+    class="event-link"
+    :to="{ name: 'certificate-show', params: { id: certificate.id } }"
+  >
     <div class="event-card -shadow">
       <span class="eyebrow">@{{ certificate.time }} on {{ certificate.date }}</span>
       <h4 class="title">{{ certificate.title }}</h4>
