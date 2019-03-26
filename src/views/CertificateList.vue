@@ -11,7 +11,7 @@
 
 <script>
 import CertificateCard from '@/components/CertificateCard.vue'
-import axios from 'axios'
+import CertificateService from '@/services/CertificateService.js'
 
 export default {
   components: {
@@ -23,8 +23,7 @@ export default {
     }
   },
   created() {
-    axios
-      .get('http://localhost:3000/certificates')
+    CertificateService.getCertificates()
       .then(response => {
         this.certificates = response.data
       })
