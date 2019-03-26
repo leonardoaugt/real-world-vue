@@ -12,5 +12,8 @@ const apiClient = axios.create({
 export default {
   getCertificates() {
     return apiClient.get('/certificates')
+  },
+  getCertificate(id) {
+    return apiClient.get(`/certificates/${id}`)
   }
 }
