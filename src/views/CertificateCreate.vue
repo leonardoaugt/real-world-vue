@@ -1,20 +1,16 @@
 <template>
   <div>
-    <h1>Create an Event, {{ userName }}</h1>
-    <p>This is user ID {{ userID }}</p>
+    <h1>Create an Event, {{ user.name }}</h1>
+    <p>This is user ID {{ user.id }}</p>
+    <p>There are {{ catLength }} categories</p>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  computed: {
-    userName() {
-      return this.$store.state.user.name
-    },
-    userID() {
-      return this.$store.state.user.id
-    }
-  }
+  computed: mapState(['user', 'categories'])
 }
 </script>
 
