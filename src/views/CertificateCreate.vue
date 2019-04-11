@@ -2,18 +2,16 @@
   <div>
     <h1>Create an Certificate, {{ user.name }}</h1>
     <p>This is user ID {{ user.id }}</p>
-    <p>There are {{ getCertificate(1) }} categories</p>
+    <p>There are {{ getCertificateById(2) }} categories</p>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   computed: {
-    getCertificate() {
-      return this.$store.getters.getCertificateById
-    },
+    ...mapGetters(['getCertificateById']),
     ...mapState(['user', 'categories'])
   }
 }
