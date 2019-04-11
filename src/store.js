@@ -13,7 +13,7 @@ export default new Vuex.Store({
       'housing',
       'education'
     ],
-    todos: [
+    certificates: [
       { id: 1, text: '...', done: true },
       { id: 2, text: '...', done: false },
       { id: 3, text: '...', done: true },
@@ -23,14 +23,8 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   getters: {
-    catLength: state => {
-      return state.categories.length
-    },
-    doneTodos: state => {
-      return state.todos.filter(todo => todo.done)
-    },
-    activeTodosCount: state => {
-      return state.todos.filter(todo => !todo.done).length
+    getCertificateById: state => id => {
+      return state.certificates.find(certificate => certificate.id === id)
     }
   }
 })

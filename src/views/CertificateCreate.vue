@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>Create an Event, {{ user.name }}</h1>
+    <h1>Create an Certificate, {{ user.name }}</h1>
     <p>This is user ID {{ user.id }}</p>
-    <p>There are {{ catLength }} categories</p>
+    <p>There are {{ getCertificate(1) }} categories</p>
   </div>
 </template>
 
@@ -11,8 +11,8 @@ import { mapState } from 'vuex'
 
 export default {
   computed: {
-    catLength() {
-      return this.$store.getters.catLength
+    getCertificate() {
+      return this.$store.getters.getCertificateById
     },
     ...mapState(['user', 'categories'])
   }
