@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import CertificateService from '@/services/CertificateService.js'
 
 Vue.use(Vuex)
 
@@ -20,8 +21,18 @@ export default new Vuex.Store({
       { id: 4, text: '...', done: false }
     ]
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    ADD_CERTIFICATE(state, certificate) {
+      state.certificates.push(certificate)
+      console.log('chamou aqui')
+    }
+  },
+  actions: {
+    createCertificate({ commit }, certificate) {
+      CertificateService.postCertificate(certificate)
+      commit('ADD_CERTIFICATE', certificate)
+    }
+  },
   getters: {
     getCertificateById: state => id => {
       return state.certificates.find(certificate => certificate.id === id)

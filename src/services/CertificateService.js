@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { Certificate } from 'crypto'
 
 const apiClient = axios.create({
   baseURL: 'http://localhost:3000',
@@ -15,5 +16,8 @@ export default {
   },
   getCertificate(id) {
     return apiClient.get(`/certificates/${id}`)
+  },
+  postCertificate(certificate) {
+    return apiClient.post('/certificates', certificate)
   }
 }
