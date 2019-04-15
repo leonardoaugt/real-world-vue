@@ -59,6 +59,10 @@ export default {
       this.$store
         .dispatch('createCertificate', this.certificate)
         .then(() => {
+          this.$router.push({
+            name: 'certificate-show',
+            params: { id: this.certificate.id }
+          })
           this.certificate = this.createFreshCertificateObject()
         })
         .catch(() => {
