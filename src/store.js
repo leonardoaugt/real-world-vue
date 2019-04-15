@@ -24,13 +24,13 @@ export default new Vuex.Store({
   mutations: {
     ADD_CERTIFICATE(state, certificate) {
       state.certificates.push(certificate)
-      console.log('chamou aqui')
     }
   },
   actions: {
     createCertificate({ commit }, certificate) {
-      CertificateService.postCertificate(certificate)
-      commit('ADD_CERTIFICATE', certificate)
+      return CertificateService.postCertificate(certificate).then(() => {
+        commit('ADD_CERTIFICATE', certificate)
+      })
     }
   },
   getters: {

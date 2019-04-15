@@ -56,7 +56,14 @@ export default {
   },
   methods: {
     createCertificate() {
-      this.$store.dispatch('createCertificate', this.certificate)
+      this.$store
+        .dispatch('createCertificate', this.certificate)
+        .then(() => {
+          this.certificate = this.createFreshCertificateObject()
+        })
+        .catch(() => {
+          console.log('There was a problem creating your certificate')
+        })
     },
     createFreshCertificateObject() {
       const id = Math.floor(Math.random() * 10000000)
